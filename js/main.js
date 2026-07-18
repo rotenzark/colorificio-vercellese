@@ -116,7 +116,7 @@
     var path = document.getElementById('stradaPath');
     if (path) { path.style.strokeDashoffset = 0; }
   }
-  setTimeout(showAllReveals, 1500);
+  setTimeout(function () { if (!hasGsap || reducedMotion) showAllReveals(); }, 1500);
 
   if (hasGsap && !reducedMotion) {
     gsap.utils.toArray('.reveal').forEach(function (el) {
